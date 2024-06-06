@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List</title>
+</head>
+<body>
+    <h1>Blog List</h1>
+    <ul>
+        {% for blog in home %}
+            <li>
+                <strong>{{ blog.title|upper }}</strong><br>
+                Author: {{ blog.author|title }}<br>
+                Created on: {{ blog.created_at|date:"F j, Y" }}<br>
+                Content Preview: {{ blog.content|truncatewords:10 }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
